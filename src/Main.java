@@ -28,9 +28,15 @@ public class Main {
                 } else {
                     System.out.println("has enough weight");
                 }
-            } catch (InputMismatchException | CustomerException e) {
-                System.out.println(e.getMessage());
+            } catch (InputMismatchException e) {
+                try{
+                    throw new CustomerException("s");
+                }catch (CustomerException ex){
+                    System.out.println(ex.getMessage());
+
+                }
             }
+
 
             while (true) {
                 System.out.print("yes for continue,no for stop : ");
